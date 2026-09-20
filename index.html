@@ -6,182 +6,94 @@
 <title>مولّد بطاقة الحماية المدنية - DEMO</title>
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;background:#101014;color:#111;font-family:Tahoma,Arial,sans-serif;
-  min-height:100vh;padding:28px;
-}
-.container{
-  max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 480px;
-  gap:45px;align-items:start;direction:ltr;
-}
+body{margin:0;background:#101014;color:#111;font-family:Tahoma,Arial,sans-serif;min-height:100vh;padding:28px}
+.container{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 480px;gap:45px;align-items:start;direction:ltr}
 .card-wrap{direction:rtl;display:flex;justify-content:center;padding-top:15px}
-.card{
-  width:620px;max-width:100%;height:390px;background:#f8f8f8;border-radius:14px;
-  box-shadow:0 15px 45px #0008;overflow:hidden;position:relative;
-  border:1px solid #ccc;
-}
-.card-header{
-  height:78px;border-bottom:1px solid #bbb;display:flex;align-items:center;
-  padding:10px 16px;gap:14px;background:#fff;
-}
-.flag{
-  width:49px;height:34px;background:#e70013;border-radius:3px;display:flex;
-  align-items:center;justify-content:center;color:white;font-size:19px;
-}
+.card{width:620px;max-width:100%;height:410px;background:#f8f8f8;border-radius:14px;box-shadow:0 15px 45px #0008;overflow:hidden;position:relative;border:1px solid #ccc}
+.card-header{height:78px;border-bottom:1px solid #bbb;display:flex;align-items:center;padding:10px 16px;gap:14px;background:#fff}
+.flag{width:49px;height:34px;background:#e70013;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.flag img{width:100%;height:100%;object-fit:cover}
 .header-text{text-align:center;flex:1;line-height:1.25}
 .header-text b{font-size:17px}.header-text small{font-size:8px;color:#555}
-.badge{
-  width:65px;height:45px;border:1px dashed #aaa;border-radius:4px;
-  display:flex;align-items:center;justify-content:center;color:#777;font-size:9px;
-}
-.card-body{padding:16px 20px;position:relative;height:312px}
-.photo{
-  position:absolute;left:18px;top:16px;width:115px;height:145px;
-  border:1px solid #999;background:#eee;object-fit:cover;
-}
-.info{padding-left:140px;font-size:13px;line-height:2.25}
-.row{display:flex;border-bottom:1px dotted #ccc}
+.badge{width:65px;height:45px;display:flex;align-items:center;justify-content:center}
+.badge img{width:48px;height:32px;object-fit:cover;border-radius:2px}
+.card-body{padding:16px 20px;position:relative;height:332px}
+.photo{position:absolute;left:18px;top:16px;width:115px;height:145px;border:1px solid #999;background:#eee;object-fit:cover}
+.info{padding-left:140px;font-size:11.5px;line-height:1.75}
+.row{display:flex;border-bottom:1px dotted #ccc;min-height:25px}
 .label{font-weight:bold;width:115px}.value{flex:1}
-.serial{
-  position:absolute;left:18px;right:18px;bottom:12px;height:32px;background:#111;
-  color:#fff;border-radius:2px;text-align:center;line-height:32px;
-  font-size:13px;letter-spacing:4px;
-}
-.watermark{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  pointer-events:none;transform:rotate(-18deg);font-size:35px;font-weight:bold;
-  color:#d22;opacity:.13;
-}
-.form{
-  direction:rtl;background:#fff;border-radius:17px;padding:22px 20px 24px;
-  box-shadow:0 12px 35px #0005;
-}
+.serial{position:absolute;left:18px;right:18px;bottom:12px;height:32px;background:#111;color:#fff;border-radius:2px;text-align:center;line-height:32px;font-size:13px;letter-spacing:4px}
+.watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transform:rotate(-18deg);font-size:35px;font-weight:bold;color:#d22;opacity:.13}
+.form{direction:rtl;background:#fff;border-radius:17px;padding:22px 20px 24px;box-shadow:0 12px 35px #0005}
 h1{margin:0 0 20px;text-align:center;font-size:22px}
-label{display:block;font-weight:bold;font-size:14px;margin:13px 0 6px}
-input{
-  width:100%;height:40px;border:1px solid #ccc;border-radius:8px;
-  padding:0 12px;font-size:14px;background:#fff;
-}
+label{display:block;font-weight:bold;font-size:14px;margin:11px 0 6px}
+input{width:100%;height:40px;border:1px solid #ccc;border-radius:8px;padding:0 12px;font-size:14px;background:#fff}
 input[type=file]{padding:7px}
 .actions{display:flex;gap:10px;margin-top:20px}
-button{
-  flex:1;border:0;border-radius:8px;height:42px;color:#fff;font-weight:bold;
-  cursor:pointer;font-size:14px
-}
-#jpg{background:#22a447} #png{background:#087ff5}
-.notice{
-  margin-top:16px;background:#fff3cd;border:1px solid #ffe08a;border-radius:8px;
-  padding:10px;font-size:12px;line-height:1.6;color:#664d03
-}
-@media(max-width:900px){
- .container{grid-template-columns:1fr;gap:25px}
- .card{width:620px}
-}
+button{flex:1;border:0;border-radius:8px;height:42px;color:#fff;font-weight:bold;cursor:pointer;font-size:14px}
+#jpg{background:#22a447}#png{background:#087ff5}
+.notice{margin-top:16px;background:#fff3cd;border:1px solid #ffe08a;border-radius:8px;padding:10px;font-size:12px;line-height:1.6;color:#664d03}
+@media(max-width:900px){.container{grid-template-columns:1fr;gap:25px}.card{width:620px}}
 </style>
 </head>
 <body>
-
 <div class="container">
-
-  <div class="card-wrap">
-    <div class="card" id="card">
-      <div class="card-header">
-        <div class="flag">
-  <img src="https://flagcdn.com/w80/tn.png" alt="علم تونس">
+<div class="card-wrap">
+<div class="card" id="card">
+<div class="card-header">
+<div class="flag"><img src="https://flagcdn.com/w80/tn.png" alt="علم تونس"></div>
+<div class="header-text">
+<b>الحماية المدنية التونسية</b><br>
+<small>PROTECTION CIVILE TUNISIENNE</small>
 </div>
-        <div class="header-text">
-          <b>الحماية المدنية التونسية</b><br>
-          <small>PROTECTION CIVILE TUNISIENNE — CARTE DÉMO</small>
-        </div>
-        <div class="badge">LOGO<br>DEMO</div>
-      </div>
-
-      <div class="card-body">
-        <img id="previewPhoto" class="photo" alt="Photo">
-        <div class="info">
-          <div class="row"><span class="label">الاسم واللقب:</span><span class="value" id="cname">—</span></div>
-          <div class="row"><span class="label">الرتبة:</span><span class="value" id="crank">—</span></div>
-          <div class="row"><span class="label">الوحدة:</span><span class="value" id="cunit">—</span></div>
-          <div class="row"><span class="label">الاختصاص:</span><span class="value" id="cspec">—</span></div>
-          <div class="row"><span class="label">تاريخ الانتداب:</span><span class="value" id="cdate">—</span></div>
-          <div class="row"><span class="label">رقم تجريبي:</span><span class="value" id="cnum">000000000</span></div>
-        </div>
-
-        <div class="watermark">DEMO — NON OFFICIEL</div>
-        <div class="serial" id="cserial">000000000</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="form">
-    <h1>بيانات بطاقة الحماية المدنية</h1>
-
-    <label>الاسم واللقب</label>
-    <input id="name" placeholder="اكتب الاسم واللقب..." oninput="update()">
-
-    <label>الرتبة</label>
-    <input id="rank" placeholder="اكتب الرتبة..." oninput="update()">
-
-    <label>الوحدة / المركز</label>
-    <input id="unit" placeholder="اكتب الوحدة..." oninput="update()">
-
-    <label>الاختصاص</label>
-    <input id="spec" placeholder="اكتب الاختصاص..." oninput="update()">
-
-    <label>تاريخ الانتداب</label>
-    <input id="date" type="date" onchange="update()">
-
-    <label>رقم البطاقة التجريبي (9 أرقام)</label>
-    <input id="num" maxlength="9" inputmode="numeric" value="000000000" oninput="digitsOnly();update()">
-
-    <label>الصورة الشخصية</label>
-    <input id="photo" type="file" accept="image/*" onchange="loadPhoto(event)">
-
-    <div class="actions">
-      <button id="jpg" onclick="downloadCard('jpg')">تحميل JPG</button>
-      <button id="png" onclick="downloadCard('png')">تحميل PNG</button>
-    </div>
-
-    <div class="notice">
-      ⚠️ هذا مولّد تصميم تجريبي فقط. البطاقة تحمل علامة
-      <b>DEMO — NON OFFICIEL</b> وليست وثيقة رسمية أو هوية حكومية.
-    </div>
-  </div>
+<div class="badge"><img src="https://flagcdn.com/w80/tn.png" alt="علم تونس"></div>
+</div>
+<div class="card-body">
+<img id="previewPhoto" class="photo" alt="Photo">
+<div class="info">
+<div class="row"><span class="label">الاسم واللقب:</span><span class="value" id="cname">—</span></div>
+<div class="row"><span class="label">الرتبة:</span><span class="value" id="crank">—</span></div>
+<div class="row"><span class="label">الوزارة:</span><span class="value">وزارة الداخلية</span></div>
+<div class="row"><span class="label">الهيكل:</span><span class="value">الديوان الوطني للحماية المدنية</span></div>
+<div class="row"><span class="label">الوحدة / المركز:</span><span class="value" id="cunit">—</span></div>
+<div class="row"><span class="label">الاختصاص:</span><span class="value" id="cspec">—</span></div>
+<div class="row"><span class="label">التفاصيل:</span><span class="value" id="cdetails">—</span></div>
+<div class="row"><span class="label">تاريخ الانتداب:</span><span class="value" id="cdate">—</span></div>
+<div class="row"><span class="label">رقم تجريبي:</span><span class="value" id="cnum">000000000</span></div>
+</div>
+<div class="watermark">DEMO — NON OFFICIEL</div>
+<div class="serial" id="cserial">000000000</div>
+</div>
+</div>
 </div>
 
+<div class="form">
+<h1>بيانات بطاقة الحماية المدنية</h1>
+<label>الاسم واللقب</label><input id="name" placeholder="اكتب الاسم واللقب..." oninput="update()">
+<label>الرتبة</label><input id="rank" placeholder="اكتب الرتبة..." oninput="update()">
+<label>الوحدة / المركز</label><input id="unit" placeholder="اكتب الوحدة..." oninput="update()">
+<label>الاختصاص</label><input id="spec" placeholder="اكتب الاختصاص..." oninput="update()">
+<label>تفاصيل إضافية</label><input id="details" placeholder="المركز، الفوج، الاختصاص..." oninput="update()">
+<label>تاريخ الانتداب</label><input id="date" type="date" onchange="update()">
+<label>رقم البطاقة التجريبي (9 أرقام)</label><input id="num" maxlength="9" inputmode="numeric" value="000000000" oninput="digitsOnly();update()">
+<label>الصورة الشخصية</label><input id="photo" type="file" accept="image/*" onchange="loadPhoto(event)">
+<div class="actions"><button id="jpg" onclick="downloadCard('jpg')">تحميل JPG</button><button id="png" onclick="downloadCard('png')">تحميل PNG</button></div>
+<div class="notice">⚠️ هذا مولّد تصميم تجريبي فقط. البطاقة تحمل علامة <b>DEMO — NON OFFICIEL</b> وليست وثيقة رسمية أو هوية حكومية.</div>
+</div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
-function digitsOnly(){
-  const el=document.getElementById('num');
-  el.value=el.value.replace(/\\D/g,'').slice(0,9);
-}
+function digitsOnly(){const el=document.getElementById('num');el.value=el.value.replace(/\D/g,'').slice(0,9)}
 function update(){
-  document.getElementById('cname').textContent=document.getElementById('name').value||'—';
-  document.getElementById('crank').textContent=document.getElementById('rank').value||'—';
-  document.getElementById('cunit').textContent=document.getElementById('unit').value||'—';
-  document.getElementById('cspec').textContent=document.getElementById('spec').value||'—';
-  document.getElementById('cdate').textContent=document.getElementById('date').value||'—';
-  const n=document.getElementById('num').value||'000000000';
-  document.getElementById('cnum').textContent=n;
-  document.getElementById('cserial').textContent=n;
-}
-function loadPhoto(e){
-  const file=e.target.files[0];
-  if(!file)return;
-  const reader=new FileReader();
-  reader.onload=ev=>{
-    document.getElementById('previewPhoto').src=ev.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-async function downloadCard(type){
-  const card=document.getElementById('card');
-  const canvas=await html2canvas(card,{scale:3,useCORS:true,backgroundColor:'#f8f8f8'});
-  const link=document.createElement('a');
-  link.download='civil-protection-demo.'+(type==='jpg'?'jpg':'png');
-  link.href=canvas.toDataURL(type==='jpg'?'image/jpeg':'image/png',0.95);
-  link.click();
-}
+document.getElementById('cname').textContent=document.getElementById('name').value||'—';
+document.getElementById('crank').textContent=document.getElementById('rank').value||'—';
+document.getElementById('cunit').textContent=document.getElementById('unit').value||'—';
+document.getElementById('cspec').textContent=document.getElementById('spec').value||'—';
+document.getElementById('cdetails').textContent=document.getElementById('details').value||'—';
+document.getElementById('cdate').textContent=document.getElementById('date').value||'—';
+const n=document.getElementById('num').value||'000000000';document.getElementById('cnum').textContent=n;document.getElementById('cserial').textContent=n}
+function loadPhoto(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=ev=>{document.getElementById('previewPhoto').src=ev.target.result};reader.readAsDataURL(file)}
+async function downloadCard(type){const card=document.getElementById('card');const canvas=await html2canvas(card,{scale:3,useCORS:true,backgroundColor:'#f8f8f8'});const link=document.createElement('a');link.download='civil-protection-demo.'+(type==='jpg'?'jpg':'png');link.href=canvas.toDataURL(type==='jpg'?'image/jpeg':'image/png',0.95);link.click()}
 update();
 </script>
 </body>
